@@ -20,21 +20,13 @@ class App extends React.Component {
           <p>Temperature: {tempMin}</p>
           <p>Steps: {stepsMin}</p>
           {/* Water */}
-          <div className={styles.evenBox}>
-            <Box icon="local_drink" color="#3A85FF" value={1.5} unit="L" />
-          </div>
+          <Box className={styles.evenBox} icon="local_drink" color="#3A85FF" value={1.5} unit="L" />
           {/* Steps */}
-          <div className={styles.box}>
-            <Box icon="directions_walk" color="black" value={3000} unit="steps" />
-          </div>
+          <Box icon="directions_walk" color="black" value={3000} unit="steps" />
           {/* Heart */}
-          <div className={styles.evenBox}>
-            <Box icon="favorite" color="red" value={120} unit="bpm" />
-          </div>
+          <Box className={styles.evenBox} icon="favorite" color="red" value={120} unit="bpm" />
           {/* Temperature */}
-          <div className={styles.Box}>
-            <Box icon="wb_sunny" color="yellow" value={-10} unit="°C" />
-          </div>
+          <Box icon="wb_sunny" color="yellow" value={-10} unit="°C" />
         </div>
       </div>
     );
