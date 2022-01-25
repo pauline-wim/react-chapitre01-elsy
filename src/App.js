@@ -1,8 +1,8 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
+import Box from "./components/Box"
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
-import Box from "./components/Box.js"
-import styles from "./styles/global.css";
+import "./styles/global.css";
 
 const tempMin = -20;
 // const tempMax = 40;
@@ -20,13 +20,33 @@ class App extends React.Component {
           <p>Temperature: {tempMin}</p>
           <p>Steps: {stepsMin}</p>
           {/* Water */}
-          <Box className={styles.evenBox} icon="local_drink" color="#3A85FF" value={1.5} unit="L" />
+          <Box 
+            icon="local_drink" 
+            color="#3A85FF" 
+            value={1.5} 
+            unit="L"
+          />
           {/* Steps */}
-          <Box icon="directions_walk" color="black" value={3000} unit="steps" />
+          <Box 
+            icon="directions_walk" 
+            color="black" 
+            value={3000} 
+            unit="steps"
+          />
           {/* Heart */}
-          <Box className={styles.evenBox} icon="favorite" color="red" value={120} unit="bpm" />
+          <Box 
+            icon="favorite" 
+            color="red" 
+            value={120} 
+            unit="bpm"
+          />
           {/* Temperature */}
-          <Box icon="wb_sunny" color="yellow" value={-10} unit="°C" />
+          <Box 
+            icon="wb_sunny" 
+            color="yellow" 
+            value={-10} 
+            unit="°C"
+          />
         </div>
       </div>
     );
