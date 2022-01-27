@@ -24,20 +24,20 @@ class App extends React.Component {
       steps : 3000,
     }
 
-    this.handleSteps = this.handleSteps.bind(this);
-    this.handleHeart = this.handleHeart.bind(this);
-    this.handleTemp = this.handleTemp.bind(this);
+    this.onStepsChange = this.onStepsChange.bind(this);
+    this.onHeartChange = this.onHeartChange.bind(this);
+    this.onTempChange = this.onTempChange.bind(this);
   }
 
-  handleSteps(e) {
+  onStepsChange(e) {
     return this.setState({steps: e.target.value})
   }
 
-  handleHeart(e) {
+  onHeartChange(e) {
     return this.setState({heart: e.target.value})
   }
 
-  handleTemp(e) {
+  onTempChange(e) {
     return this.setState({temperature: e.target.value})
   }
 
@@ -60,7 +60,7 @@ class App extends React.Component {
             unit="steps"
             min={stepsMin}
             max={stepsMax}
-            onInput={this.handleSteps}
+            onInput={this.onStepsChange}
           />
           {/* Heart */}
           <Box 
@@ -70,7 +70,7 @@ class App extends React.Component {
             unit="bpm"
             min={heartMin}
             max={heartMax}
-            onInput={this.handleHeart}
+            onInput={this.onHeartChange}
           />
           {/* Temperature */}
           <Box 
@@ -80,7 +80,7 @@ class App extends React.Component {
             unit="°C"
             min={tempMin}
             max={tempMax}
-            onInput={this.handleTemp}
+            onInput={this.onTempChange}
 
           />
         </div>
