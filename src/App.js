@@ -22,16 +22,23 @@ class App extends React.Component {
       heart: 120,
       temperature: -10,
       steps : 3000,
-      value: 0,
     }
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleSteps = this.handleSteps.bind(this);
+    this.handleHeart = this.handleHeart.bind(this);
+    this.handleTemp = this.handleTemp.bind(this);
   }
 
-  handleChange() {(e) => {
-    return this.setState({value: e.target.value})
+  handleSteps(e) {
+    return this.setState({steps: e.target.value})
   }
-    
+
+  handleHeart(e) {
+    return this.setState({heart: e.target.value})
+  }
+
+  handleTemp(e) {
+    return this.setState({temperature: e.target.value})
   }
 
   render() {
@@ -49,21 +56,21 @@ class App extends React.Component {
           <Box 
             icon="directions_walk" 
             color="black" 
-            value={this.state.value} 
+            value={this.state.steps} 
             unit="steps"
-            defaultValue={this.state.steps}
             min={stepsMin}
             max={stepsMax}
-            onInput={this.handleChange}
+            onInput={this.handleSteps}
           />
           {/* Heart */}
           <Box 
             icon="favorite" 
-            color="red"  
-            value={this.state.heart} 
+            color="red" 
+            value={this.state.heart}
             unit="bpm"
             min={heartMin}
             max={heartMax}
+            onInput={this.handleHeart}
           />
           {/* Temperature */}
           <Box 
@@ -73,6 +80,8 @@ class App extends React.Component {
             unit="°C"
             min={tempMin}
             max={tempMax}
+            onInput={this.handleTemp}
+
           />
         </div>
       </div>
