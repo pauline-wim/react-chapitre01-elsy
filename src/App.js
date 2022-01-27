@@ -22,12 +22,15 @@ class App extends React.Component {
       heart: 120,
       temperature: -10,
       steps : 3000,
+      value: 0,
     }
 
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(e) {
+  handleChange() {(e) => {
+    return this.setState({value: e.target.value})
+  }
     
   }
 
@@ -46,8 +49,9 @@ class App extends React.Component {
           <Box 
             icon="directions_walk" 
             color="black" 
-            value={this.state.steps} 
+            value={this.state.value} 
             unit="steps"
+            defaultValue={this.state.steps}
             min={stepsMin}
             max={stepsMax}
             onInput={this.handleChange}
