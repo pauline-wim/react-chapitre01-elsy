@@ -75,6 +75,7 @@ class App extends React.Component {
             unit="steps"
             min={stepsMin}
             max={stepsMax}
+            step={1000}
             onInput={this.onStepsChange}
           />
           {/* Heart */}
