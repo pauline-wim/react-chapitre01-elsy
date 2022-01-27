@@ -18,7 +18,7 @@ class App extends React.Component {
     super();
 
     this.state = {
-      water: 0,
+      water: 1.5,
       heart: 120,
       temperature: -10,
       steps : 3000,
@@ -27,6 +27,7 @@ class App extends React.Component {
     this.onStepsChange = this.onStepsChange.bind(this);
     this.onHeartChange = this.onHeartChange.bind(this);
     this.onTempChange = this.onTempChange.bind(this);
+    this.calculateWater = this.calculateWater.bind(this);
   }
 
   onStepsChange(e) {
@@ -41,6 +42,20 @@ class App extends React.Component {
     return this.setState({temperature: e.target.value})
   }
 
+  calculateWater() {
+    this.setState((prevState) => {
+      if (this.state.temperature > 20) {
+        return {water: prevState.water + 0.02}
+      }
+      if (this.state.heart > 120) {
+        return {water: prevState.water + 0.0008}
+      }
+      if (this.state.steps > 10000) {
+        return {water: prevState.water + 0.00002}
+      }
+    });
+  };
+
   render() {
     return (
       <div className="container-fluid">
@@ -49,7 +64,7 @@ class App extends React.Component {
           <Box 
             icon="local_drink" 
             color="#3A85FF" 
-            value={this.state.water} 
+            value={this.calculateWater} 
             unit="L"
           />
           {/* Steps */}
@@ -81,7 +96,6 @@ class App extends React.Component {
             min={tempMin}
             max={tempMax}
             onInput={this.onTempChange}
-
           />
         </div>
       </div>

@@ -9,7 +9,7 @@ class Box extends React.Component {
                     {/* directions_walk */}
                     {this.props.icon}
                 </span>
-                <p id="value">{this.props.value} {this.props.unit}</p>
+                <p>{this.props.value} {this.props.unit}</p>
                 {this.props.icon === "local_drink" ? null :
                 <input type="range" name="" id="" min={this.props.min} max={this.props.max} value={this.props.value} onInput={this.props.onInput} />
                 }
