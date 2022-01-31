@@ -43,10 +43,12 @@ class App extends React.Component {
   }
 
   calculateWater() {
+    console.log("Calling function calculateWater");
+    
     this.setState((prevState) => {
       if (this.state.temperature > 20) {
         return {water: prevState.water + 0.02}
-      }
+      } 
       if (this.state.heart > 120) {
         return {water: prevState.water + 0.0008}
       }
@@ -54,6 +56,7 @@ class App extends React.Component {
         return {water: prevState.water + 0.00002}
       }
     });
+    return this.state.water;
   };
 
   render() {
